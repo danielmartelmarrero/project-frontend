@@ -1,6 +1,6 @@
 #Navbar{
     background-color: rgb(223,0,0);
-    5eight: 110px;
+    height: 110px;
     display: flex;
     justify-content: space-between;
     padding: 2% 15%;
@@ -100,10 +100,14 @@
 #prevPrice{
     text-decoration:line-through;
 }
-#iconPrice{
+#discPrice{
     
     font-weight: 700;
     color: rgb(223,0,0); 
+}
+#iconPrice{
+    font-weight: 700;
+    color: black; 
 }
 a{
     color: black;
@@ -146,11 +150,17 @@ a{
     flex-direction: column;
     align-items: flex-end;
 }
-#price{
+.discPrice{
     font-style: italic;
     font-size: 38px;
     font-weight: 800;
-    color: rgb(223,0,0); 
+    color: rgb(223,0,0);
+    margin: 0 0 30px 0
+}
+.price{
+    font-size: 38px;
+    font-weight: 800;
+    color: black; 
     margin: 0 0 30px 0
 }
 #buyDiv button{
@@ -163,4 +173,44 @@ a{
 }
 .description-text{
     margin: 15px 0;
+}
+
+
+/*-----------FOOTER-----------------*/
+footer{
+    height: 550px;
+    margin-top: 50px;
+    padding: 80px 0;
+    color: grey;
+    background-color: rgb(81, 79, 79);
+}
+footer section{
+    display: flex;
+}
+#footer-imgs{
+    margin-left: 200px;
+}
+#footer-imgs>img{
+    width: 90px;
+    height: 60px;
+    margin: 0 30px 80px 0;
+    border-radius: 8px;
+}
+footer h3{
+    margin-bottom: 15px;
+    color: rgb(163, 159, 159);
+}
+#help{
+    margin-right: 140px;
+    margin-left: 200px;
+}
+footer div{
+    margin: 0 3%;
+}
+footer a{
+    display: block;
+    color: rgb(163, 159, 159);
+    text-decoration: none;
+    font-size: 14px;
+    margin: 5px 0;
 }

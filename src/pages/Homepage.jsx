@@ -5,16 +5,6 @@ import { Link } from 'react-router-dom'
 
 function Homepage() {
 
-    const [iphones, setIphones] = useState([])
-    useEffect(() => {
-        axios.get(`${import.meta.env.VITE_BACKEND_URL}/Products`)
-            .then((products) => {
-                console.log(products.data)
-            })
-            .catch((err) => { console.log(err) })
-    }, [])
-
-
     return (
         <div>
             <div id="carouselExampleIndicators" className="carousel slide">
@@ -54,7 +44,7 @@ function Homepage() {
                     </Link>
                 </div>
                 <div className='categoryDiv'>
-                    <Link to='/Television'>
+                    <Link to='/Televisions'>
                     <img src="https://canarias.mediamarkt.es/cdn/shop/files/1_800x572.webp?v=1713867988" alt="" />
                         <h6>Televisions</h6>
                     </Link>

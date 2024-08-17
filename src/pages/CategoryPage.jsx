@@ -10,17 +10,13 @@ function CategoryPage() {
 
   let { category } = useParams()
   
-  console.log(category)
   useEffect(() => {
     axios.get(`${import.meta.env.VITE_BACKEND_URL}/categories?_embed=Products`)
       .then((response) => {
-        console.log(response.data)
         const foundCategory = response.data.find((oneCategory) => {
           return oneCategory.name == category
         })
-        console.log(foundCategory)
         setProducts(foundCategory.Products)
-
       })
       .catch((err) => { console.log(err) })
   }, []) 
@@ -29,10 +25,11 @@ function CategoryPage() {
       if(value=="low-to-high"){
         const copiedArray = [...products]
         copiedArray.sort((a,b)=>{
-          return a.price-b.price
+          return a.price-b.price 
         })
         setProducts(copiedArray)
       }
+
       else if(value=="high-to-low"){
         const copiedArray = [...products]
         copiedArray.sort((a,b)=>{
