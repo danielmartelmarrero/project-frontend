@@ -38,7 +38,7 @@ function ProductDetailsPage() {
   }, [])
 
   
-
+ 
   function addToCart() {
     
     //Check if the product we want to add is already in the cart
