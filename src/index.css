@@ -136,10 +136,9 @@ a{
 
 #productDetPageDiv{
     width: 75%;
-    
     margin: 0% auto;
 } 
-#productDetPageDiv p{
+.index2{
     margin: 50px 0;
 }
 #productMainDiv{
@@ -162,6 +161,7 @@ a{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    margin-top: 2%;
 }
 .discPrice{
     font-style: italic;
@@ -174,8 +174,20 @@ a{
     font-size: 38px;
     font-weight: 800;
     color: black; 
-    margin: 0 0 30px 0
+    margin: 0 0 0px 0
 }
+#financeDiv{
+    height: 80px;
+    width: 450px;
+    display: flex;
+    font-size: 15px;
+    justify-content: space-between;
+    background-color: rgb(240,240,240);
+    border-radius: 4px;
+    padding: 10px;
+    margin: 5% 0;
+}
+
 #buyDiv button{
     height: 50px;
     width: 600px;
@@ -185,7 +197,7 @@ a{
     color: white;
     border: none;
     border-radius: 8px;
-    margin: 30% 0 0 0;
+    margin: 5% 0 0 0;
 }
 #buyDiv button:hover{
     background-color: rgb(250, 250, 250);
@@ -199,7 +211,84 @@ a{
 .description-text{
     margin: 15px 0;
 }
-
+/*--------------CART----------------*/
+#cartBody{
+    width: 1200px;
+    margin: 0% auto;
+}
+#cartMaindiv{
+    display: flex;
+}
+#cartTitle{
+    font-weight: 700;
+    margin-top: 5%;
+}
+#cartLength{
+    font-size: 14px;
+    color: rgb(161, 158, 158);
+}
+.cart-productdiv{
+    display: flex;
+    align-items: center;
+    width: 790px;
+    border: solid lightgray 1px;
+    border-radius: 8px;
+    padding: 10px 50px;
+    margin: 20px 0;
+}
+.cart-productpic{
+    width: 250px;
+    height: 200px;
+    
+}
+.cart-proddetails{
+    margin: 0 40px;
+}
+.cart-prod-price{
+    display: flex;
+    align-items: center;
+}
+.cart-price{
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 15px;
+}
+.cart-original-price{
+    text-decoration: line-through;
+    font-size: 15px;
+}
+.cart-prod-buttons{
+    display: flex;
+}
+.delete-button{
+    background-color: white;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+.cart-productquantity{
+    display: flex;
+    justify-content: center;
+    width: 70px;
+    border: solid black;
+    border-radius: 5px;
+}
+.cart-productquantity button{
+    border: none;
+    background-color: white;
+}
+#cartResume{
+    height: 500px;
+    border: lightgray solid 1px;
+    border-radius: 8px;
+    margin-left: 25px;
+    margin-top: 20px;
+    padding: 15px;
+}
+#cartResume div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
 /*-----------FOOTER-----------------*/
 footer{
