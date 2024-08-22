@@ -8,6 +8,7 @@ import ProductDetailsPage from './pages/ProductDetailsPage';
 import CartPage from './pages/CartPage';
 import AccountPage from './pages/AccountPage';
 import Footer from './components/Footer';
+import SearchPage from './pages/SearchPage'
 
 function App() {
   
@@ -21,6 +22,7 @@ function App() {
         <Route path='/:category/:id' element={<ProductDetailsPage/>}/>
         <Route path='/cart' element={<CartPage/>}/>
         <Route path='/myAccount' element={<AccountPage/>}/>
+        <Route path='/results' element={<SearchPage/>}/>
       </Routes>
     <Footer/>
     </>

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 function Navbar() {
-    const [search, setSearch] = useState("Look for")
+    const [search, setSearch] = useState("")
     const [zipCode, setzipCode] = useState("Enter your zip code")
 
     function handleSubmit(e) {

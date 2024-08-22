@@ -116,7 +116,8 @@ function ProductDetailsPage() {
                 <p>TIN 18.95% <strong>TAE 20.63%</strong> en 6 cuotas **</p>
               </div>
             </div>
-
+            <hr style={{color: 'black', width: '600px', marginBottom:'50px'}}/>
+            <hr style={{color: 'black', width: '600px'}}/>  
             <span>Cantidad</span>
             <select onChange={(e) => { setQuantity(parseInt(e.target.value)) }} name="Cantidad" id="">
               <option value="1">1</option>
@@ -125,11 +126,12 @@ function ProductDetailsPage() {
               <option value="4">4</option>
             </select>
           </div>
-          <button onClick={addToCart} style={{ display: 'block' }}>Buy</button>
+          
+          <Link to='/cart'><button onClick={addToCart} style={{ display: 'block' }}>Buy</button></Link>
         </div>
 
       </div>
-      <hr style={{ margin: '150px 0' }} />
+      <hr style={{ margin: '80px 0' }} />
       <h4 className='subtitle-detailspg' >Description</h4>
 
       {product.description && <img id='descriptionPicture' src={product?.description} alt="" />}

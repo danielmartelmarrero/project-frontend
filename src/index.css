@@ -135,7 +135,7 @@ a{
 /*-----------------DETAILS PAGE--------------------------*/
 
 #productDetPageDiv{
-    width: 75%;
+    width: 68%;
     margin: 0% auto;
 } 
 .index2{
@@ -269,7 +269,7 @@ a{
     display: flex;
     justify-content: center;
     width: 70px;
-    border: solid black;
+    border: solid black 1px;
     border-radius: 5px;
 }
 .cart-productquantity button{
@@ -277,19 +277,45 @@ a{
     background-color: white;
 }
 #cartResume{
-    height: 500px;
+    height: 450px;
     border: lightgray solid 1px;
     border-radius: 8px;
     margin-left: 25px;
     margin-top: 20px;
-    padding: 15px;
+    padding: 20px;
 }
 #cartResume div{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+#payButton{
+    width: 400px;
+    height: 55px;
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    background-color: rgb(223,0,0);
+    border: none;
+    border-radius: 4px;
+    margin-top: 40px;
+}
 
+#keepBuying{
+    width: 400px;
+    height: 55px;
+    font-size: 24px;
+    font-weight: 500;
+    color: rgb(132, 127, 127);
+    background-color: white;
+    border: rgb(132, 127, 127) solid 1px;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+#keepBuying:hover{
+    color: rgb(223,0,0);
+    border: rgb(223,0,0) solid 1px;
+}
 /*-----------FOOTER-----------------*/
 footer{
     height: 550px;
