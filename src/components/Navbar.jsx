@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 
-function Navbar() {
+function Navbar() { 
     const [search, setSearch] = useState("")
     const [zipCode, setzipCode] = useState("Enter your zip code")
 
     function handleSubmit(e) {
         e.preventdefault()
+        console.log(search)
     }
+
     return (
         <div id='Navbar'>
             <Link to='/'><img src="https://cms-images.mmst.eu/osyynfyvlyjc/44h8niXHULqXsrJQIX29AZ/56e82d73704471511e9484f373b39f39/MM_logo_white.svg?q=80" alt="" /></Link>
@@ -29,12 +31,12 @@ function Navbar() {
                         <p>All categories</p>
 
                         <button>Campaigns and offers</button>
-                        <button>Computing</button>
+                        <Link to='Laptops'><button>Computing</button></Link>
                         <button>Gaming</button>
                         <button>Computer Accesories</button>
                         <button>Telephony</button>
                         <button>Smart Watches</button>
-                        <button>Television</button>
+                        <Link to='/Televisions'><button>Television</button></Link>
                         <button>Audio and HiFi</button>
                         <button>Consoles and Video games</button>
                         <button>Household appliances</button>
@@ -60,8 +62,12 @@ function Navbar() {
                 </div>
             </div>
             <form id='searchBar' onSubmit={handleSubmit}>
-                <img src="./assets/magnifier.jpg" alt="" />
-                <input value={search} type="text" onChange={(e) => { setSearch(e.target.value) }} />
+                <input type="text" onChange={(e)=>{
+                    setSearch(e.target.value)
+                    console.log(search)
+                    localStorage.setItem('param',search)} 
+                } />
+
             </form>
             <button id='myShopBtn' className="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">My Shop</button>
 
