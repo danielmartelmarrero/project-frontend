@@ -100,7 +100,7 @@ function App() {
         <Route path='/:category/:id' element={<ProductDetailsPage/>}/>
         <Route path='/cart' element={<CartPage/>}/>
         <Route path='/myAccount' element={<AccountPage/>}/>
-        <Route path='/results' element={<SearchPage/>}/>
+        <Route path='/results/:searchTerm' element={<SearchPage/>}/>
       </Routes>
     <Footer/>
     </>

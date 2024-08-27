@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
-import { Link, Navigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 function Navbar() { 
     const [search, setSearch] = useState("")
     const [zipCode, setzipCode] = useState("Enter your zip code")
+    const navigate = useNavigate()
 
     function handleSubmit(e) {
-        e.preventdefault()
+        e.preventDefault()
         console.log(search)
+        navigate(`/results/${search}`)
     }
 
     return (
