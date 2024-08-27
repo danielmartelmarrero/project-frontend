@@ -1,11 +1,27 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
-import { Link } from 'react-router-dom'
 
+import { Link } from 'react-router-dom'
+import SpecialBtn from '../components/SpecialBtn'
 
 function Homepage() {
 
+    const products = document.querySelectorAll('product_inslide')
+    let counter = 0
+    function moveLeft() {
+        counter--
+        scroll()
+    }
+    function moveRight() {
+        counter++
+        scroll()
+    }
+    function scroll() {
+        products.forEach(function (item) {
+            item.style.transform = `translateX(-${counter * 1250}px)`
+        })
+    }
+
     return (
+
         <div>
             <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
                 <div className="carousel-indicators">
@@ -34,9 +50,9 @@ function Homepage() {
                 </button>
             </div>
 
-            <h3 className='subtitle-homepage'>Featured Categories</h3>
+            <h3 className='subtitle-homepage' style={{ fontWeight: '700' }}>Featured Categories</h3>
             <div id='featuredCategories' >
-                
+
                 <div className='categoryDiv'>
                     <Link to='/Offers'>
                         <img src="https://canarias.mediamarkt.es/cdn/shop/files/image_4_fb124120-52bd-4acc-bfcc-181aded14475_800x572.png?v=1701098660" alt="" />
@@ -45,37 +61,336 @@ function Homepage() {
                 </div>
                 <div className='categoryDiv'>
                     <Link to='/Televisions'>
-                    <img src="https://canarias.mediamarkt.es/cdn/shop/files/1_800x572.webp?v=1713867988" alt="" />
+                        <img src="https://canarias.mediamarkt.es/cdn/shop/files/1_800x572.webp?v=1713867988" alt="" />
                         <h6>Televisions</h6>
                     </Link>
                 </div>
                 <div className='categoryDiv'>
                     <Link to='/Smartphones'>
-                    <img src="https://canarias.mediamarkt.es/cdn/shop/files/Distri_S24_Ultra__1_4047cd96-ac1b-4d14-a2d6-a6c0c8662d4f_800x572.webp?v=1713867962" alt="" />
+                        <img src="https://canarias.mediamarkt.es/cdn/shop/files/Distri_S24_Ultra__1_4047cd96-ac1b-4d14-a2d6-a6c0c8662d4f_800x572.webp?v=1713867962" alt="" />
                         <h6>Smartphones</h6>
                     </Link>
                 </div>
                 <div className='categoryDiv'>
                     <Link to='/AppleZone'>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/800px-Apple_logo_black.svg.png" alt="" />
-                    <h6>Apple Zone</h6>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/800px-Apple_logo_black.svg.png" alt="" />
+                        <h6>Apple Zone</h6>
                     </Link>
                 </div>
                 <div className='categoryDiv'>
                     <Link to='/Laptops'>
-                    <img src="https://canarias.mediamarkt.es/cdn/shop/files/portatil3_fcd66e93-87ff-4692-81e6-216ae763e60b_800x572.webp?v=1713867946" alt="" />
-                    <h6>Laptops</h6>
+                        <img src="https://canarias.mediamarkt.es/cdn/shop/files/portatil3_fcd66e93-87ff-4692-81e6-216ae763e60b_800x572.webp?v=1713867946" alt="" />
+                        <h6>Laptops</h6>
                     </Link>
                 </div>
                 <div className='categoryDiv'>
                     <Link to='/HouseholdAppliances'>
-                    <img src="https://canarias.mediamarkt.es/cdn/shop/files/electro_690f721c-30b9-4683-a21f-36c5172317d2_800x572.webp?v=1713867930" alt="" />
-                    <h6>Household Appliances</h6>
+                        <img src="https://canarias.mediamarkt.es/cdn/shop/files/electro_690f721c-30b9-4683-a21f-36c5172317d2_800x572.webp?v=1713867930" alt="" />
+                        <h6>Household Appliances</h6>
                     </Link>
                 </div>
             </div>
-            <h3 className='subtitle-homepage'>Summer Offers - Until 08/14 at 9am</h3>
+
+            <h3 style={{ margin: '5% 0 0 10%', fontWeight: '700' }}>Best Sellers</h3>
+            <div className='slider'>
+                <div className='product_inslide'>
+                    <div className='image_inslide'>
+                        <img src="https://canarias.mediamarkt.es/cdn/shop/files/electro_690f721c-30b9-4683-a21f-36c5172317d2_800x572.webp?v=1713867930" alt="" />
+                    </div>
+                    <div className='info_inslide'>
+                        <p>Headphone</p>
+                        <p>Price</p>
+                    </div>
+                </div>
+
+                <div className='product_inslide'>
+                    <div className='image_inslide'>
+                        <img src="https://canarias.mediamarkt.es/cdn/shop/files/electro_690f721c-30b9-4683-a21f-36c5172317d2_800x572.webp?v=1713867930" alt="" />
+                    </div>
+                    <div className='info_inslide'>
+                        <p>Headphone</p>
+                        <p>Price</p>
+                    </div>
+                </div>
+
+                <div className='product_inslide'>
+                    <div className='image_inslide'>
+                        <img src="https://canarias.mediamarkt.es/cdn/shop/files/electro_690f721c-30b9-4683-a21f-36c5172317d2_800x572.webp?v=1713867930" alt="" />
+                    </div>
+                    <div className='info_inslide'>
+                        <p>Headphone</p>
+                        <p>Price</p>
+                    </div>
+                </div>
+
+                <div className='product_inslide'>
+                    <div className='image_inslide'>
+                        <img src="https://canarias.mediamarkt.es/cdn/shop/files/electro_690f721c-30b9-4683-a21f-36c5172317d2_800x572.webp?v=1713867930" alt="" />
+                    </div>
+                    <div className='info_inslide'>
+                        <p>Headphone</p>
+                        <p>Price</p>
+                    </div>
+                </div>
+
+                <div className='product_inslide'>
+                    <div className='image_inslide'>
+                        <img src="https://canarias.mediamarkt.es/cdn/shop/files/electro_690f721c-30b9-4683-a21f-36c5172317d2_800x572.webp?v=1713867930" alt="" />
+                    </div>
+                    <div className='info_inslide'>
+                        <p>Headphone</p>
+                        <p>Price</p>
+                    </div>
+                </div>
+
+                <div className='product_inslide'>
+                    <div className='image_inslide'>
+                        <img src="https://canarias.mediamarkt.es/cdn/shop/files/electro_690f721c-30b9-4683-a21f-36c5172317d2_800x572.webp?v=1713867930" alt="" />
+                    </div>
+                    <div className='info_inslide'>
+                        <p>Headphone</p>
+                        <p>Price</p>
+                    </div>
+                </div>
+
+                <div className='product_inslide'>
+                    <div className='image_inslide'>
+                        <img src="https://canarias.mediamarkt.es/cdn/shop/files/electro_690f721c-30b9-4683-a21f-36c5172317d2_800x572.webp?v=1713867930" alt="" />
+                    </div>
+                    <div className='info_inslide'>
+                        <p>Headphone</p>
+                        <p>Price</p>
+                    </div>
+                </div>
+
+                <div className='product_inslide'>
+                    <div className='image_inslide'>
+                        <img src="https://canarias.mediamarkt.es/cdn/shop/files/electro_690f721c-30b9-4683-a21f-36c5172317d2_800x572.webp?v=1713867930" alt="" />
+                    </div>
+                    <div className='info_inslide'>
+                        <p>Headphone</p>
+                        <p>Price</p>
+                    </div>
+                </div>
+
+                <div className='arrow'>
+                    <button className='left' onClick={moveLeft()}>{'<'}</button>
+                    <button className='right' onClick={moveRight()}>{'>'}</button>
+                </div>
+            </div>
+
+            <section id='outletSec'>
+                    <div id='outletDiv'>
+                    <div id='outletDivInfo'>
+                        <h2>Zona Outlet</h2>
+                        <p>ENVIO GRATIS para los mejores descuentos y Oportunidades.</p>
+                        <Link to='/Offers'><button>Ver más</button></Link>
+                    </div>
+                    <img src="https://canarias.mediamarkt.es/cdn/shop/files/zona_outlet_colorline_d34a94d2-7950-42c2-a676-22a030b6c1d4.png?v=1682331810" alt="" />
+                    </div>
+            </section>
+
+            <h3 style={{ margin: '5% 0 0 10%', fontWeight: '700' }}>Special Summer</h3>
+            <div className='slider'>
+                <div className='product_inslide'>
+                    <div className='image_inslide'>
+                        <img src="https://canarias.mediamarkt.es/cdn/shop/files/electro_690f721c-30b9-4683-a21f-36c5172317d2_800x572.webp?v=1713867930" alt="" />
+                    </div>
+                    <div className='info_inslide'>
+                        <p>Headphone</p>
+                        <p>Price</p>
+                    </div>
+                </div>
+
+                <div className='product_inslide'>
+                    <div className='image_inslide'>
+                        <img src="https://canarias.mediamarkt.es/cdn/shop/files/electro_690f721c-30b9-4683-a21f-36c5172317d2_800x572.webp?v=1713867930" alt="" />
+                    </div>
+                    <div className='info_inslide'>
+                        <p>Headphone</p>
+                        <p>Price</p>
+                    </div>
+                </div>
+
+                <div className='product_inslide'>
+                    <div className='image_inslide'>
+                        <img src="https://canarias.mediamarkt.es/cdn/shop/files/electro_690f721c-30b9-4683-a21f-36c5172317d2_800x572.webp?v=1713867930" alt="" />
+                    </div>
+                    <div className='info_inslide'>
+                        <p>Headphone</p>
+                        <p>Price</p>
+                    </div>
+                </div>
+
+                <div className='product_inslide'>
+                    <div className='image_inslide'>
+                        <img src="https://canarias.mediamarkt.es/cdn/shop/files/electro_690f721c-30b9-4683-a21f-36c5172317d2_800x572.webp?v=1713867930" alt="" />
+                    </div>
+                    <div className='info_inslide'>
+                        <p>Headphone</p>
+                        <p>Price</p>
+                    </div>
+                </div>
+
+                <div className='product_inslide'>
+                    <div className='image_inslide'>
+                        <img src="https://canarias.mediamarkt.es/cdn/shop/files/electro_690f721c-30b9-4683-a21f-36c5172317d2_800x572.webp?v=1713867930" alt="" />
+                    </div>
+                    <div className='info_inslide'>
+                        <p>Headphone</p>
+                        <p>Price</p>
+                    </div>
+                </div>
+
+                <div className='product_inslide'>
+                    <div className='image_inslide'>
+                        <img src="https://canarias.mediamarkt.es/cdn/shop/files/electro_690f721c-30b9-4683-a21f-36c5172317d2_800x572.webp?v=1713867930" alt="" />
+                    </div>
+                    <div className='info_inslide'>
+                        <p>Headphone</p>
+                        <p>Price</p>
+                    </div>
+                </div>
+
+                <div className='product_inslide'>
+                    <div className='image_inslide'>
+                        <img src="https://canarias.mediamarkt.es/cdn/shop/files/electro_690f721c-30b9-4683-a21f-36c5172317d2_800x572.webp?v=1713867930" alt="" />
+                    </div>
+                    <div className='info_inslide'>
+                        <p>Headphone</p>
+                        <p>Price</p>
+                    </div>
+                </div>
+
+                <div className='product_inslide'>
+                    <div className='image_inslide'>
+                        <img src="https://canarias.mediamarkt.es/cdn/shop/files/electro_690f721c-30b9-4683-a21f-36c5172317d2_800x572.webp?v=1713867930" alt="" />
+                    </div>
+                    <div className='info_inslide'>
+                        <p>Headphone</p>
+                        <p>Price</p>
+                    </div>
+                </div>
+
+                <div className='arrow'>
+                    <button className='left' onClick={moveLeft()}>{'<'}</button>
+                    <button className='right' onClick={moveRight()}>{'>'}</button>
+                </div>
+            </div>
+            <h3 style={{ margin: '5% 0 0 10%', fontWeight: '700' }}>Special Summer</h3>
+            <div className='slider'>
+                <div className='product_inslide'>
+                    <div className='image_inslide'>
+                        <img src="https://canarias.mediamarkt.es/cdn/shop/files/electro_690f721c-30b9-4683-a21f-36c5172317d2_800x572.webp?v=1713867930" alt="" />
+                    </div>
+                    <div className='info_inslide'>
+                        <p>Headphone</p>
+                        <p>Price</p>
+                    </div>
+                </div>
+
+                <div className='product_inslide'>
+                    <div className='image_inslide'>
+                        <img src="https://canarias.mediamarkt.es/cdn/shop/files/electro_690f721c-30b9-4683-a21f-36c5172317d2_800x572.webp?v=1713867930" alt="" />
+                    </div>
+                    <div className='info_inslide'>
+                        <p>Headphone</p>
+                        <p>Price</p>
+                    </div>
+                </div>
+
+                <div className='product_inslide'>
+                    <div className='image_inslide'>
+                        <img src="https://canarias.mediamarkt.es/cdn/shop/files/electro_690f721c-30b9-4683-a21f-36c5172317d2_800x572.webp?v=1713867930" alt="" />
+                    </div>
+                    <div className='info_inslide'>
+                        <p>Headphone</p>
+                        <p>Price</p>
+                    </div>
+                </div>
+
+                <div className='product_inslide'>
+                    <div className='image_inslide'>
+                        <img src="https://canarias.mediamarkt.es/cdn/shop/files/electro_690f721c-30b9-4683-a21f-36c5172317d2_800x572.webp?v=1713867930" alt="" />
+                    </div>
+                    <div className='info_inslide'>
+                        <p>Headphone</p>
+                        <p>Price</p>
+                    </div>
+                </div>
+
+                <div className='product_inslide'>
+                    <div className='image_inslide'>
+                        <img src="https://canarias.mediamarkt.es/cdn/shop/files/electro_690f721c-30b9-4683-a21f-36c5172317d2_800x572.webp?v=1713867930" alt="" />
+                    </div>
+                    <div className='info_inslide'>
+                        <p>Headphone</p>
+                        <p>Price</p>
+                    </div>
+                </div>
+
+                <div className='product_inslide'>
+                    <div className='image_inslide'>
+                        <img src="https://canarias.mediamarkt.es/cdn/shop/files/electro_690f721c-30b9-4683-a21f-36c5172317d2_800x572.webp?v=1713867930" alt="" />
+                    </div>
+                    <div className='info_inslide'>
+                        <p>Headphone</p>
+                        <p>Price</p>
+                    </div>
+                </div>
+
+                <div className='product_inslide'>
+                    <div className='image_inslide'>
+                        <img src="https://canarias.mediamarkt.es/cdn/shop/files/electro_690f721c-30b9-4683-a21f-36c5172317d2_800x572.webp?v=1713867930" alt="" />
+                    </div>
+                    <div className='info_inslide'>
+                        <p>Headphone</p>
+                        <p>Price</p>
+                    </div>
+                </div>
+
+                <div className='product_inslide'>
+                    <div className='image_inslide'>
+                        <img src="https://canarias.mediamarkt.es/cdn/shop/files/electro_690f721c-30b9-4683-a21f-36c5172317d2_800x572.webp?v=1713867930" alt="" />
+                    </div>
+                    <div className='info_inslide'>
+                        <p>Headphone</p>
+                        <p>Price</p>
+                    </div>
+                </div>
+
+                <div className='arrow'>
+                    <button className='left' onClick={moveLeft()}>{'<'}</button>
+                    <button className='right' onClick={moveRight()}>{'>'}</button>
+                </div>
+            </div>
+
+            <section id='outletSec'>
+                    <div id='outletDiv'>
+                    <div id='outletDivInfo'>
+                        <h2>10€ de bienvenida</h2>
+                        <p>Suscribete a nuestra newsletter y llévate 10€ de Regalo. Te entrarás antes que nadie de nuestras ofertas y promociones, apúntate y estarás al día de todo.</p>
+                        <Link to='https://canarias.mediamarkt.es/pages/newsletter'><button>Ver más</button></Link>
+                    </div>
+                    <img src="https://canarias.mediamarkt.es/cdn/shop/files/news_colorline_260e7727-dce4-4da2-851d-507054ea16c9.png?v=1695313038" alt="" />
+                    </div>
+            </section>
+
+            <section id='featuredServices'>
+                <h3 style={{ color: 'white' }}>Nuestros servicios destacados</h3>
+                <div style={{ display: 'flex', width: '70%', margin: '0% auto' }}>
+                    <SpecialBtn title='Mediamarkt Club Card' text='Solicita ya tu tarjeta y financia tu pedido al instante. Hasta 3.000 para hacer realidad tus sueños'></SpecialBtn>
+                    <SpecialBtn title='Personaliza tu tarifa' text='Encuentra aquí tus tarifas de red, móvil y entretenimiento para que no pagues de más'></SpecialBtn>
+                    <SpecialBtn title='Servicio Instalación' text='Preocúpate de disfrutar y deja que nuestros especialistas instalen tu producto'></SpecialBtn>
+                </div>
+            </section>
+
+            <section id='companyConsulting'>
+                <SpecialBtn title='¿Necesitas asesoramiento para tu empresa?' text='Ponemos a tu servicio a los mejores especialistas en producto para tu empresa. ¿Quieres saber más?'></SpecialBtn>
+                <SpecialBtn title='¿Tienes alguna duda?' text='Estaremos encantados de atenderte, consulta nuestras preguntas frecuentes o escribenos a travéss de la página de contacto'></SpecialBtn>
+            </section>
         </div>
+
     )
 }
 

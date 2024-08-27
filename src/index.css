@@ -47,6 +47,7 @@
 
 }
 
+
 /*--------------HOMEPAGE FEATURED CATEGORIES----------------------*/
 
 .subtitle-homepage{
@@ -84,6 +85,55 @@
     font-weight: bold;
     margin-top: 15px;
 }
+#outletSec{
+    background-color: rgb(223,0,0);
+    padding: 40px 0;
+    margin-top: 60px;
+}
+#outletDiv{
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    color: white;
+    margin: 0% auto;
+}
+#outletDivInfo h2{
+    font-weight: 700;
+}
+#outletDivInfo button{
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: rgb(39,36,34);
+    color: white;
+    border: solid white;
+    border-radius: 8px;
+}
+#outletDiv img{
+    height: 200px;
+}
+#featuredServices{
+    background-color: #272422;
+    margin-top: 100px;
+    height: 650px;
+    padding: 80px 0;
+}
+#featuredServices h3{
+    margin-left: 15%;
+    margin-bottom: 30px;
+}
+#companyConsulting{
+    width: 80%;
+    display: flex;
+    position: relative;
+    bottom: 100px;
+    margin: 0% auto;
+}
+#companyConsulting div{
+    border: lightgray solid 1px;
+}
+
 
 /*----------------CATEGORIES PAGE---------------*/
 
@@ -318,9 +368,8 @@ a{
 }
 /*-----------FOOTER-----------------*/
 footer{
-    height: 550px;
     margin-top: 50px;
-    padding: 80px 0;
+    padding: 80px 0 0 0;
     color: grey;
     background-color: rgb(81, 79, 79);
 }
@@ -353,4 +402,10 @@ footer a{
     text-decoration: none;
     font-size: 14px;
     margin: 5px 0;
+}
+#subfooter{
+    display: block;
+    background-color: rgb(39,36,34);
+    padding: 2% 10%;
+    margin-top: 30px;
 }

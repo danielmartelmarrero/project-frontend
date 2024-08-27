@@ -56,6 +56,11 @@ function Footer() {
                 <a href="">Newsletter</a>
             </div>
         </section>
+        <section id='subfooter'>
+            <p>{'>'}  Condiciones de contratación  {'>'}  Condiciones de uso web  {'>'}  Privacidad  {'>'}  Política de cookies</p>
+            <p>Precios válidos para compras por Internet y para tiendas MediaMarkt en las Islas Canarias. Envíos únicamente a las Islas Canarias.</p>
+            <p>Ciertos productos pueden tener una clasificación más alta por formar parte de promociones especiales o campañas publicitarias. La clasificación del resultado de la búsqueda se basa, además, en los siguientes parámetros principales (por orden de relevancia descendente): coincidencia del término de búsqueda con los datos del producto, popularidad del producto, disponibilidad del producto, relevancia de la categoría del producto y novedad del producto.</p>
+        </section>
         </footer>  
 
   )
