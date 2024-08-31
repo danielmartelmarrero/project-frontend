@@ -6,17 +6,16 @@ function CartPage() {
 
   const [cart, setCart] = useState([])
   const [total, setTotal] = useState(0)
-  const [loading, setLoading] = useState(true)
+
   //-----------------------------------------------------------------------------------------
   function getShopping() {
+    console.log('fetch')
     axios.get(`${import.meta.env.VITE_BACKEND_URL}/shoppingcart`)
       .then((response) => {
         //Sets whatever is inside the shoppincart db json array into the state
         const filteredCart = response.data.filter((oneProduct) => {
           return oneProduct.quantity > 0
         })
-
-
         setCart(filteredCart)
       })
       .catch((err) => { console.log(err) })
@@ -32,9 +31,6 @@ function CartPage() {
 
   useEffect(() => {
     getShopping()
-    setLoading(false)
-
-
   }, [])
   //-----------------------------------------------------------------------------------------
   function deleteProd(prod) {
