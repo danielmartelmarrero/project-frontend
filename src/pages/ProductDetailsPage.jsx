@@ -28,7 +28,7 @@ function ProductDetailsPage() {
         const foundCategory = response.data.find((oneCategory) => {
           return oneCategory.name == category
         })
-        //Finds the product inside the category stored in line 27
+        //Finds the product  by using the id in useParams 
         const foundProduct = foundCategory.Products.find((oneProduct) => {
           return oneProduct.id == id
         })
@@ -44,7 +44,6 @@ function ProductDetailsPage() {
 
     //Check if the product we want to add is already in the cart
     const existingProd = cart.find(cartItem => cartItem.id === product.id);
-
 
     //If db json includes our product then...
     if (existingProd) {
@@ -66,7 +65,6 @@ function ProductDetailsPage() {
         })
         .catch((err) => { console.log(err) })
     }
-
 
     //If the db json shoppingcart doesnt iclude the product then...
     else {
@@ -116,8 +114,8 @@ function ProductDetailsPage() {
                 <p>TIN 18.95% <strong>TAE 20.63%</strong> en 6 cuotas **</p>
               </div>
             </div>
-            <hr style={{color: 'black', width: '600px', marginBottom:'50px'}}/>
-            <hr style={{color: 'black', width: '600px'}}/>  
+            <hr style={{ color: 'black', width: '600px', marginBottom: '50px' }} />
+            <hr style={{ color: 'black', width: '600px' }} />
             <span>Cantidad</span>
             <select onChange={(e) => { setQuantity(parseInt(e.target.value)) }} name="Cantidad" id="">
               <option value="1">1</option>
@@ -126,7 +124,7 @@ function ProductDetailsPage() {
               <option value="4">4</option>
             </select>
           </div>
-          
+
           <Link to='/cart'><button onClick={addToCart} style={{ display: 'block' }}>Buy</button></Link>
         </div>
 

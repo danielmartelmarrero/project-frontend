@@ -27,18 +27,28 @@ function Homepage() {
 
       
 
-    const products = document.querySelectorAll('product_inslide')
+    const products = document.querySelectorAll('.product_inslide')
+    console.log(products)
     let counter = 0
     function moveLeft() {
+        console.log('left')
         counter--
-        scroll()
+        if(counter>=0){
+            scroll()
+        }
+        else{
+            counter=0
+        }
     }
     function moveRight() {
         counter++
+        console.log('right')
         scroll()
     }
     function scroll() {
-        products.forEach(function (item) {
+        products.forEach((item)=> {
+            console.log('scroll')
+            console.log(counter*1250)
             item.style.transform = `translateX(-${counter * 1250}px)`
         })
     }
@@ -177,8 +187,8 @@ function Homepage() {
                 </div>
 
                 <div className='arrow'>
-                    <button className='left' onClick={moveLeft()}>{'<'}</button>
-                    <button className='right' onClick={moveRight()}>{'>'}</button>
+                    <button className='leftbtn' onClick={moveLeft}>{'<'}</button>
+                    <button className='rightbtn' onClick={moveRight}>{'>'}</button>
                 </div>
             </div>
 
@@ -198,13 +208,15 @@ function Homepage() {
                 
                 {summerProds.map(oneProd=>{
                     return(
+                        <div className='product_inslide' style={{padding:0, border:'none'}}>
                         <ProductIcon className='product_inslide' key={oneProd.id} product={oneProd} category='Summer'/>
+                        </div>
                     )
                 })}
 
                 <div className='arrow'>
-                    <button className='left' onClick={moveLeft()}>{'<'}</button>
-                    <button className='right' onClick={moveRight()}>{'>'}</button>
+                    <button className='leftbtn' onClick={moveLeft}>{'<'}</button>
+                    <button className='rightbtn' onClick={moveRight}>{'>'}</button>
                 </div>
             </div>
 
@@ -212,13 +224,15 @@ function Homepage() {
             <div className='slider'>
                 {gamingProds.map(oneProd=>{
                     return(
-                        <ProductIcon className='product_inslide' key={oneProd.id} product={oneProd} category='Gaming'/>
+                        <div className='product_inslide' style={{padding:0, border:'none'}}>
+                        <ProductIcon  key={oneProd.id} product={oneProd} category='Gaming'/>
+                        </div>
                     )
                 })}
 
                 <div className='arrow'>
-                    <button className='left' onClick={moveLeft()}>{'<'}</button>
-                    <button className='right' onClick={moveRight()}>{'>'}</button>
+                    <button className='leftbtn' onClick={moveLeft}>{'<'}</button>
+                    <button className='rightbtn' onClick={moveRight}>{'>'}</button>
                 </div>
             </div>
             

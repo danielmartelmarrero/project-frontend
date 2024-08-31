@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+
 function ProductIcon(props) {
     return (
         <div className='product-div'>

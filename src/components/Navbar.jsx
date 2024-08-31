@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 function Navbar() { 
+    
     const [search, setSearch] = useState("")
     const [zipCode, setzipCode] = useState("Enter your zip code")
     const navigate = useNavigate()
@@ -32,16 +33,16 @@ function Navbar() {
                         <hr />
                         <p>All categories</p>
 
-                        <button>Campaigns and offers</button>
-                        <Link to='Laptops'><button>Computing</button></Link>
-                        <button>Gaming</button>
+                        <Link to='/Offers'><button>Campaigns and offers</button></Link>
+                        <Link to='/Laptops'><button>Computing</button></Link>
+                        <Link to='/Gaming'><button>Gaming</button></Link>
                         <button>Computer Accesories</button>
-                        <button>Telephony</button>
+                        <Link to='/Smartphones'><button>Telephony</button></Link>
                         <button>Smart Watches</button>
                         <Link to='/Televisions'><button>Television</button></Link>
                         <button>Audio and HiFi</button>
                         <button>Consoles and Video games</button>
-                        <button>Household appliances</button>
+                        <Link to='/HouseholdAppliances'><button>Household appliances</button></Link>
                         <button>Small appliances</button>
                         <button>Beauty and health</button>
                         <button>Air conditioning and heating</button>

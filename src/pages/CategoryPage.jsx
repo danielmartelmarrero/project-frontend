@@ -19,7 +19,7 @@ function CategoryPage() {
         setProducts(foundCategory.Products)
       })
       .catch((err) => { console.log(err) })
-  }, []) 
+  }, [category]) 
 
   function sorted(array, value){
       if(value=="low-to-high"){
@@ -55,13 +55,12 @@ function CategoryPage() {
   return (
     <div>
       <h6 className="index">Categories {'>'} {category}</h6>
-      <select onChange={(e)=>{sorted(products, e.target.value)}} id="orderSelect">
 
+      <select onChange={(e)=>{sorted(products, e.target.value)}} id="orderSelect">
         <option value="low-to-high">Price: Lowest to Highest</option>
         <option value="high-to-low">Price: Highest to Lowest</option>
         <option value="a-to-z">Name: A-Z</option>
         <option value="z-to-a">Name: Z-A</option>
-        
       </select>
 
       <div id="allProducts">
