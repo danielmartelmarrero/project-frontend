@@ -9,6 +9,7 @@ function Homepage() {
 
     const [summerProds, setSummerProds] = useState([])
     const [gamingProds, setGamingProds] = useState([])
+    const [bestSeller, setBestSeller] = useState([])
 
     useEffect(() => {
         axios.get(`${import.meta.env.VITE_BACKEND_URL}/categories?_embed=Products`)
@@ -121,74 +122,6 @@ function Homepage() {
                         <img src="https://canarias.mediamarkt.es/cdn/shop/files/electro_690f721c-30b9-4683-a21f-36c5172317d2_800x572.webp?v=1713867930" alt="" />
                         <h6>Household Appliances</h6>
                     </Link>
-                </div>
-            </div>
-
-            <h3 style={{ margin: '5% 0 0 10%', fontWeight: '700' }}>Best Sellers</h3>
-            <div className='slider'>
-                <div className='product_inslide'>
-                    <div className='image_inslide'>
-                        <img src="https://canarias.mediamarkt.es/cdn/shop/files/electro_690f721c-30b9-4683-a21f-36c5172317d2_800x572.webp?v=1713867930" alt="" />
-                    </div>
-                    <div className='info_inslide'>
-                        <p>Headphone</p>
-                        <p>Price</p>
-                    </div>
-                </div>
-
-                <div className='product_inslide'>
-                    <div className='image_inslide'>
-                        <img src="https://canarias.mediamarkt.es/cdn/shop/files/electro_690f721c-30b9-4683-a21f-36c5172317d2_800x572.webp?v=1713867930" alt="" />
-                    </div>
-                    <div className='info_inslide'>
-                        <p>Headphone</p>
-                        <p>Price</p>
-                    </div>
-                </div>
-
-                <div className='product_inslide'>
-                    <div className='image_inslide'>
-                        <img src="https://canarias.mediamarkt.es/cdn/shop/files/electro_690f721c-30b9-4683-a21f-36c5172317d2_800x572.webp?v=1713867930" alt="" />
-                    </div>
-                    <div className='info_inslide'>
-                        <p>Headphone</p>
-                        <p>Price</p>
-                    </div>
-                </div>
-
-                <div className='product_inslide'>
-                    <div className='image_inslide'>
-                        <img src="https://canarias.mediamarkt.es/cdn/shop/files/electro_690f721c-30b9-4683-a21f-36c5172317d2_800x572.webp?v=1713867930" alt="" />
-                    </div>
-                    <div className='info_inslide'>
-                        <p>Headphone</p>
-                        <p>Price</p>
-                    </div>
-                </div>
-
-                <div className='product_inslide'>
-                    <div className='image_inslide'>
-                        <img src="https://canarias.mediamarkt.es/cdn/shop/files/electro_690f721c-30b9-4683-a21f-36c5172317d2_800x572.webp?v=1713867930" alt="" />
-                    </div>
-                    <div className='info_inslide'>
-                        <p>Headphone</p>
-                        <p>Price</p>
-                    </div>
-                </div>
-
-                <div className='product_inslide'>
-                    <div className='image_inslide'>
-                        <img src="https://canarias.mediamarkt.es/cdn/shop/files/electro_690f721c-30b9-4683-a21f-36c5172317d2_800x572.webp?v=1713867930" alt="" />
-                    </div>
-                    <div className='info_inslide'>
-                        <p>Headphone</p>
-                        <p>Price</p>
-                    </div>
-                </div>
-
-                <div className='arrow'>
-                    <button className='leftbtn' onClick={moveLeft}>{'<'}</button>
-                    <button className='rightbtn' onClick={moveRight}>{'>'}</button>
                 </div>
             </div>
 

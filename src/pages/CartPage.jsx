@@ -6,7 +6,7 @@ function CartPage() {
 
   const [cart, setCart] = useState([])
   const [total, setTotal] = useState(0)
-
+  const [loading, setLoading] = useState(true)
   //-----------------------------------------------------------------------------------------
   function getShopping() {
     axios.get(`${import.meta.env.VITE_BACKEND_URL}/shoppingcart`)
@@ -15,6 +15,8 @@ function CartPage() {
         const filteredCart = response.data.filter((oneProduct) => {
           return oneProduct.quantity > 0
         })
+
+
         setCart(filteredCart)
       })
       .catch((err) => { console.log(err) })
@@ -30,9 +32,12 @@ function CartPage() {
 
   useEffect(() => {
     getShopping()
+    setLoading(false)
+
+
   }, [])
   //-----------------------------------------------------------------------------------------
-  function deleteProd(prod){
+  function deleteProd(prod) {
     axios.delete(`${import.meta.env.VITE_BACKEND_URL}/shoppingcart/${prod}`)
       .then(response => {
         getShopping()
@@ -40,7 +45,7 @@ function CartPage() {
       .catch(err => console.log(err))
   }
   //-----------------------------------------------------------------------------------------
-  function addProd(prod){
+  function addProd(prod) {
     axios.put(`${import.meta.env.VITE_BACKEND_URL}/shoppingcart/${prod.id}`, { ...prod, quantity: prod.quantity + 1 })
       .then(response => {
         getShopping()
@@ -48,7 +53,7 @@ function CartPage() {
       .catch(err => console.log(err))
   }
   //-----------------------------------------------------------------------------------------
-  function takeProd(prod){
+  function takeProd(prod) {
     axios.put(`${import.meta.env.VITE_BACKEND_URL}/shoppingcart/${prod.id}`, { ...prod, quantity: prod.quantity - 1 })
       .then(response => {
         getShopping()
@@ -66,12 +71,12 @@ function CartPage() {
   }
   if (cart.length == 0) {
     return (
-      <div id='cartBody' style={{height:'600px'}}>
+      <div id='cartBody' style={{ height: '600px' }}>
         <h5 id='cartTitle'>Items in your cart</h5>
         <p id='cartLength'>{cart.length} products</p>
-          <img style={{height:'200px',marginLeft:'42%',marginTop:'6%'}}src="https://static.vecteezy.com/system/resources/previews/007/528/239/non_2x/shopping-bag-icon-shopping-bag-design-illustration-shopping-bag-simple-sign-shopping-bag-logo-design-free-vector.jpg" alt="" />
-          <h3 style={{display:'flex', justifyContent: 'center'}}>Your cart is currently empty</h3>
-          <Link to='/'><p style={{display:'flex', justifyContent: 'center',color:'rgb(223,0,0)'}}>Go back to homepage</p></Link>
+        <img style={{ height: '200px', marginLeft: '42%', marginTop: '6%' }} src="https://static.vecteezy.com/system/resources/previews/007/528/239/non_2x/shopping-bag-icon-shopping-bag-design-illustration-shopping-bag-simple-sign-shopping-bag-logo-design-free-vector.jpg" alt="" />
+        <h3 style={{ display: 'flex', justifyContent: 'center' }}>Your cart is currently empty</h3>
+        <Link to='/'><p style={{ display: 'flex', justifyContent: 'center', color: 'rgb(223,0,0)' }}>Go back to homepage</p></Link>
       </div>
     )
   }
@@ -79,6 +84,7 @@ function CartPage() {
     return (
 
       <div id='cartBody'>
+
         <h5 id='cartTitle'>Items in your cart</h5>
         <p id='cartLength'>{cart.length} products</p>
         <div id='cartMaindiv'>
@@ -133,6 +139,8 @@ function CartPage() {
             <Link to='/'><button id='keepBuying' style={{ display: 'block' }}>Continue buying</button></Link>
           </div>
         </div>
+
+
       </div>
 
     )
