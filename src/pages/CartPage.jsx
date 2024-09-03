@@ -81,7 +81,7 @@ function CartPage() {
     return (
 
       <div id='cartBody'>
-        {loading && cart.length==0 && <h1>Loading...</h1> }
+        {loading && cart.length==0 && <h1 style={{margin:'15% 0 0 20%', fontSize:'22px'}}>Loading...</h1> }
         {!loading && cart.length > 0 && (<><h5 id='cartTitle'>Items in your cart</h5>
           <p id='cartLength'>{cart.length} products</p>
           <div id='cartMaindiv'>
