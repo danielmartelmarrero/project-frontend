@@ -6,7 +6,7 @@ function CartPage() {
 
   const [cart, setCart] = useState([])
   const [total, setTotal] = useState(0)
-
+  const [loading, setLoading] = useState(true)
   //-----------------------------------------------------------------------------------------
   function getShopping() {
     console.log('fetch')
@@ -17,6 +17,7 @@ function CartPage() {
           return oneProduct.quantity > 0
         })
         setCart(filteredCart)
+        setLoading(false)
       })
       .catch((err) => { console.log(err) })
   }
@@ -65,7 +66,7 @@ function CartPage() {
         .catch(err => console.log(err))
     })
   }
-  if (cart.length == 0) {
+  if (cart.length == 0 && !loading) {
     return (
       <div id='cartBody' style={{ height: '600px' }}>
         <h5 id='cartTitle'>Items in your cart</h5>
@@ -80,62 +81,61 @@ function CartPage() {
     return (
 
       <div id='cartBody'>
+        {loading && cart.length==0 && <h1>Loading...</h1> }
+        {!loading && cart.length > 0 && (<><h5 id='cartTitle'>Items in your cart</h5>
+          <p id='cartLength'>{cart.length} products</p>
+          <div id='cartMaindiv'>
+            <div>
+              {cart.map(oneProduct => {
 
-        <h5 id='cartTitle'>Items in your cart</h5>
-        <p id='cartLength'>{cart.length} products</p>
-        <div id='cartMaindiv'>
-          <div>
-            {cart.map(oneProduct => {
+                //{setTotal(total=>total+oneProduct.price)}
+                return (
+                  <div key={oneProduct.title} className='cart-productdiv'>
+                    <img className='cart-productpic' src={oneProduct.pictures[0]} alt="" />
+                    <div className='cart-proddetails'>
+                      <p>{oneProduct.title.join('')}</p>
+                      <div className='cart-prod-price'>
+                        {oneProduct.price % 1 == 0 ? <p className='cart-price'>{oneProduct.price * oneProduct.quantity}.00€</p> : <p className='cart-price'>{oneProduct.price * oneProduct.quantity}€</p>}
+                        {oneProduct.originalPrice && oneProduct.originalPrice % 1 == 0 && <p className='cart-original-price'>{oneProduct.originalPrice * oneProduct.quantity}.00€</p>}
+                        {oneProduct.originalPrice && oneProduct.originalPrice % 1 != 0 && <p className='cart-original-price'>{oneProduct.originalPrice * oneProduct.quantity}€</p>}
+                      </div>
+                      {oneProduct.price % 1 == 0 ? <p>Price per unit {oneProduct.price}.00€</p> : <p>Price per unit {oneProduct.price}€</p>}
 
-              //{setTotal(total=>total+oneProduct.price)}
-              return (
-                <div key={oneProduct.title} className='cart-productdiv'>
-                  <img className='cart-productpic' src={oneProduct.pictures[0]} alt="" />
-                  <div className='cart-proddetails'>
-                    <p>{oneProduct.title.join('')}</p>
-                    <div className='cart-prod-price'>
-                      {oneProduct.price % 1 == 0 ? <p className='cart-price'>{oneProduct.price * oneProduct.quantity}.00€</p> : <p className='cart-price'>{oneProduct.price * oneProduct.quantity}€</p>}
-                      {oneProduct.originalPrice && oneProduct.originalPrice % 1 == 0 && <p className='cart-original-price'>{oneProduct.originalPrice * oneProduct.quantity}.00€</p>}
-                      {oneProduct.originalPrice && oneProduct.originalPrice % 1 != 0 && <p className='cart-original-price'>{oneProduct.originalPrice * oneProduct.quantity}€</p>}
-                    </div>
-                    {oneProduct.price % 1 == 0 ? <p>Price per unit {oneProduct.price}.00€</p> : <p>Price per unit {oneProduct.price}€</p>}
-
-                    <div className='cart-prod-buttons'>
-                      <button onClick={() => deleteProd(oneProduct.id)} className='delete-button'>Delete</button>
-                      <div className='cart-productquantity'>
-                        <button onClick={() => takeProd(oneProduct)}>-</button>
-                        <h5>{oneProduct.quantity}</h5>
-                        <button onClick={() => addProd(oneProduct)}>+</button>
+                      <div className='cart-prod-buttons'>
+                        <button onClick={() => deleteProd(oneProduct.id)} className='delete-button'>Delete</button>
+                        <div className='cart-productquantity'>
+                          <button onClick={() => takeProd(oneProduct)}>-</button>
+                          <h5>{oneProduct.quantity}</h5>
+                          <button onClick={() => addProd(oneProduct)}>+</button>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
 
-              )
-            })}
-          </div>
-          <div id='cartResume'>
-            <h5>Resume</h5>
-            <p>You can add your discount voucher during the payment process</p>
-            <hr />
-            <div id='cartSubtotal'>
-              <h6>Subtotal</h6>
-              <h6>{total.toFixed(2)}€</h6>
+                )
+              })}
             </div>
-            <div id='shippingCost'>
-              <h6>Shppping costs</h6>
-              <h6>Calculated in the next step</h6>
+            <div id='cartResume'>
+              <h5>Resume</h5>
+              <p>You can add your discount voucher during the payment process</p>
+              <hr />
+              <div id='cartSubtotal'>
+                <h6>Subtotal</h6>
+                <h6>{total.toFixed(2)}€</h6>
+              </div>
+              <div id='shippingCost'>
+                <h6>Shppping costs</h6>
+                <h6>Calculated in the next step</h6>
+              </div>
+              <hr />
+              <div id='cartTotal'>
+                <h4>Total</h4>
+                <h4>{total.toFixed(2)}€</h4>
+              </div>
+              <button onClick={emptyCart} id='payButton' style={{ display: 'block' }}>Process payment</button>
+              <Link to='/'><button id='keepBuying' style={{ display: 'block' }}>Continue buying</button></Link>
             </div>
-            <hr />
-            <div id='cartTotal'>
-              <h4>Total</h4>
-              <h4>{total.toFixed(2)}€</h4>
-            </div>
-            <button onClick={emptyCart} id='payButton' style={{ display: 'block' }}>Process payment</button>
-            <Link to='/'><button id='keepBuying' style={{ display: 'block' }}>Continue buying</button></Link>
-          </div>
-        </div>
-
+          </div></>)}
 
       </div>
 
