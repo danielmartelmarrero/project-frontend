@@ -114,7 +114,7 @@
     height: 200px;
 }
 #featuredServices{
-    background-color: #272422;
+    background-color: rgb(39,36,34);
     margin-top: 100px;
     height: 650px;
     padding: 80px 0;
@@ -142,16 +142,27 @@
 /*----------------CATEGORIES PAGE---------------*/
 
 .index{
-    margin: 1% 0 2% 25%;
+    margin: 3% 0 2% 22%;
 }
 #orderSelect{
     margin: 0 0 0 75%;
 }
+#filterDiv{
+    width: 250px;
+    height: 200px;
+    position: relative;
+    top: 100px;
+    left: 50px;
+    padding: 15px 25px;
+    border: solid lightgrey 1px;
+    border-radius: 5px;
+}
+
 #allProducts{
     width: 1200px;
     display: flex;
     flex-wrap: wrap;
-    margin: 3% 0 0 25%;
+    margin: 0% 0 0 20%;
 }
 .product-div{
     width: 270px;

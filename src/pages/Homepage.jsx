@@ -141,9 +141,7 @@ function Homepage() {
                 
                 {summerProds.map(oneProd=>{
                     return(
-                        <div className='product_inslide' style={{padding:0, border:'none'}}>
                         <ProductIcon className='product_inslide' key={oneProd.id} product={oneProd} category='Summer'/>
-                        </div>
                     )
                 })}
 
@@ -157,9 +155,7 @@ function Homepage() {
             <div className='slider'>
                 {gamingProds.map(oneProd=>{
                     return(
-                        <div className='product_inslide' style={{padding:0, border:'none'}}>
-                        <ProductIcon  key={oneProd.id} product={oneProd} category='Gaming'/>
-                        </div>
+                        <ProductIcon  className='product_inslide' key={oneProd.id} product={oneProd} category='Gaming'/>
                     )
                 })}
 

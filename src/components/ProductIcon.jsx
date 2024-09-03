@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 function ProductIcon(props) {
     return (
-        <div className='product-div'>
+        <div className='product-div product_inslide'>
             <Link to={`/${props.category}/${props.product.id}`}>
             <img className='product-image' src={props.product.pictures[0]} alt="" />
             <p>{props.product?.title?.join('').slice(0,55)}...</p>
