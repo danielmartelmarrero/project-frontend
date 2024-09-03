@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 
 function Navbar() { 
     
@@ -66,6 +66,7 @@ function Navbar() {
             <form id='searchBar' onSubmit={handleSubmit}>
                 <input type="text" onChange={(e)=>{
                     setSearch(e.target.value)
+                    navigate(`/results/${search}`)
                     console.log(search)} 
                 } />
 
